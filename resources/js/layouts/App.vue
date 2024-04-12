@@ -1,3 +1,12 @@
+<script setup>
+import { computed } from 'vue';
+import { useRoute } from "vue-router";
+
+const route = useRoute()
+
+const currentPageTitle = computed(() => route.meta.title)
+
+</script>
 <template>
     <div class="min-h-screen bg-gray-100">
         <nav class="bg-white border-b border-gray-100">
@@ -32,7 +41,7 @@
         <header class="bg-white shadow">
             <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                 <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                    Dashboard
+                    {{ currentPageTitle }}
                 </h2>
             </div>
         </header>
